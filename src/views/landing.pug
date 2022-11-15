@@ -1,0 +1,131 @@
+doctype html
+html(lang='en')
+  include common/head.pug
+  +head("Starter MVP")
+  body
+    header
+      include common/navbar.pug
+      +navbar()
+      html
+  body
+    // Topbar Start
+    .container-fluid.bg-dark
+      .row.py-2.px-lg-5
+        .col-lg-6.text-center.text-lg-left.mb-2.mb-lg-0
+          .d-inline-flex.align-items-center.text-white
+            small
+              i.fa.fa-phone-alt.mr-2
+              | +012 345 6789
+            small.px-3 |
+            small
+              i.fa.fa-envelope.mr-2
+              | info@example.com
+        .col-lg-6.text-center.text-lg-right
+          .d-inline-flex.align-items-center
+            a.text-white.px-2(href="")
+              i.fab.fa-facebook-f
+            a.text-white.px-2(href="")
+              i.fab.fa-twitter
+            a.text-white.px-2(href="")
+              i.fab.fa-linkedin-in
+            a.text-white.px-2(href="")
+              i.fab.fa-instagram
+            a.text-white.pl-2(href="")
+              i.fab.fa-youtube
+    // Topbar End
+    // Header Start
+    .jumbotron.jumbotron-fluid.mb-5
+      .container.text-center.py-5
+        h1.text-primary.mb-4 Safe &amp; Faster
+        .mx-auto(style="width: 100%; max-width: 600px;")
+          .input-group
+            .container.text-center
+                form(action='/login', method='POST')
+                                div.form-group
+                                    label.formGroupExampleInput Email:
+                                    input(type="email", placeholder="Please enter your email", required=true, name='email', value='').form-control
+                                    label.formGroupExampleInput Password:
+                                    input(type="password", placeholder="New Password", required=true, name='password', value='').form-control
+                                    button.mt-3.btn.btn-primary(type='submit') Log In
+                                    if (retryLogIn)
+                                      p.small.text-danger Email or password incorrect.
+                                    p.mt-2.mb-0
+                                       | Olvidó su contraseña? #[a(href='') Reiniciar]
+                                    p.mt-2.mb-0
+                                       | Aún no está registrado? #[a(href='/signup') Registrarse]
+    // Header End
+    // About Start
+    .container-fluid.py-5
+      .container
+        .row.align-items-center
+          .col-lg-5.pb-4.pb-lg-0
+            img.img-fluid.w-100(src="img/about.jpg", alt="")
+            .bg-primary.text-dark.text-center.p-4
+              h3.m-0 25+ Years Experience
+          .col-lg-7
+            h6.text-primary.text-uppercase.font-weight-bold About Us
+            h1.mb-4 Trusted &amp; Faster Logistic Service Provider
+            p.mb-4 Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo
+            .d-flex.align-items-center.pt-2
+              button.btn-play(type="button", data-toggle="modal", data-src="https://www.youtube.com/embed/DWRcNpR6Kdc", data-target="#videoModal")
+                span
+              h5.font-weight-bold.m-0.ml-4 Play Video
+      // Video Modal
+      #videoModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+        .modal-dialog(role="document")
+          .modal-content
+            .modal-body
+              button.close(type="button", data-dismiss="modal", aria-label="Close")
+                span(aria-hidden="true") &amp;times;
+              // 16:9 aspect ratio
+              .embed-responsive.embed-responsive-16by9
+                iframe#video.embed-responsive-item(src="", allowscriptaccess="always", allow="autoplay")
+    // About End
+    // Testimonial Start
+    .container-fluid.py-5
+      .container
+        .text-center.pb-2
+          h6.text-primary.text-uppercase.font-weight-bold Testimonial
+          h1.mb-4 Our Clients Say
+        .owl-carousel.testimonial-carousel
+          .position-relative.bg-secondary.p-4
+            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
+            .d-flex.align-items-center.mb-3
+              img.img-fluid.rounded-circle(src="img/testimonial-1.jpg", style="width: 60px; height: 60px;", alt="")
+              .ml-3
+                h6.font-weight-semi-bold.m-0 Client Name
+                small - Profession
+            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
+          .position-relative.bg-secondary.p-4
+            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
+            .d-flex.align-items-center.mb-3
+              img.img-fluid.rounded-circle(src="img/testimonial-2.jpg", style="width: 60px; height: 60px;", alt="")
+              .ml-3
+                h6.font-weight-semi-bold.m-0 Client Name
+                small - Profession
+            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
+          .position-relative.bg-secondary.p-4
+            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
+            .d-flex.align-items-center.mb-3
+              img.img-fluid.rounded-circle(src="img/testimonial-3.jpg", style="width: 60px; height: 60px;", alt="")
+              .ml-3
+                h6.font-weight-semi-bold.m-0 Client Name
+                small - Profession
+            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
+          .position-relative.bg-secondary.p-4
+            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
+            .d-flex.align-items-center.mb-3
+              img.img-fluid.rounded-circle(src="img/testimonial-4.jpg", style="width: 60px; height: 60px;", alt="")
+              .ml-3
+                h6.font-weight-semi-bold.m-0 Client Name
+                small - Profession
+            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
+    // Testimonial End
+
+
+
+
+
+
+    include common/footer.pug
+    +footer()
