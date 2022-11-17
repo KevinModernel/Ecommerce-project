@@ -1,0 +1,80 @@
+doctype html
+html(lang='en')
+  include common/head.pug
+  +head("Starter MVP")
+  body
+    header
+      include common/navbar.pug
+      +navbar()
+      html
+  body
+    // Topbar Start
+    .container-fluid.bg-dark
+      .row.py-2.px-lg-5
+        .col-lg-6.text-center.text-lg-left.mb-2.mb-lg-0
+          .d-inline-flex.align-items-center.text-white
+            small
+              i.fa.fa-phone-alt.mr-2
+              | +012 345 6789
+            small.px-3 |
+            small
+              i.fa.fa-envelope.mr-2
+              | info@example.com
+        .col-lg-6.text-center.text-lg-right
+          .d-inline-flex.align-items-center
+            a.text-white.px-2(href="")
+              i.fab.fa-facebook-f
+            a.text-white.px-2(href="")
+              i.fab.fa-twitter
+            a.text-white.px-2(href="")
+              i.fab.fa-linkedin-in
+            a.text-white.px-2(href="")
+              i.fab.fa-instagram
+            a.text-white.pl-2(href="")
+              i.fab.fa-youtube
+    // Topbar End
+    // Header Start
+    .jumbotron.jumbotron-fluid.mb-5
+      .container.text-center.py-5
+        h1.text-primary.mb-4 Panel de Control - Admin
+        .mx-auto(style="width: 100%; max-width: 600px;")
+          .input-group
+            .container.text-center
+    // Services Start
+    .container-fluid.pt-5
+      .container
+        .text-center.pb-2
+          h6.text-primary.text-uppercase.font-weight-bold Our Services
+          h1.mb-4 Best Logistic Services
+        .row.pb-3
+          .col-lg-3.col-md-6.text-center.mb-5
+            .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
+              i.fa.fa-2x.pr-3
+              h6.text-white.font-weight-medium.m-0 Pedidos
+            p Listado de compras realizadas
+            a.border-bottom.text-decoration-none(href="orders") Ir a Pedidos
+          .col-lg-3.col-md-6.text-center.mb-5
+            .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
+              i.fa.fa-2x.pr-3
+              h6.text-white.font-weight-medium.m-0 Stocks Críticos
+            p Listado de productos con stock menor a 5 unidades
+            a.border-bottom.text-decoration-none(href="critical") Ir a Stocks Críticos
+          .col-lg-3.col-md-6.text-center.mb-5
+            .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
+              i.fa.fa-2x.pr-3
+              h6.text-white.font-weight-medium.m-0 Reponer Stocks
+            p Reponer stock de productos existentes
+            a.border-bottom.text-decoration-none(href="replenish") Ir a Reponer Stocks
+          .col-lg-3.col-md-6.text-center.mb-5
+            .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
+              i.fa.fa-2x.pr-3
+              h6.text-white.font-weight-medium.m-0 Añadir Productos
+            p Añadir nuevo productos a la venta
+            a.border-bottom.text-decoration-none(href="products/addproduct") ir a Añadir Productos
+    // Services End
+
+
+
+    // Header End
+    include common/footer.pug
+    +footer()

@@ -10,5 +10,9 @@ const signup = (req, res) => {
 	res.redirect('/products')
 };
 
+const show_adminPanel = (req, res) => {
+	res.render('admin')
+};
 
-module.exports = { get_landing, show_signup, signup }
+
+module.exports = { get_landing, show_signup, signup, show_adminPanel }
