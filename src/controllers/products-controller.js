@@ -6,7 +6,7 @@ const show_all_products = async (req, res) => {
 	//for (product in await Products.find()) {
 	//	console.log("\n console log linea 6 product controller: " + product)
 	//};
-	console.log("\n console log linea 8: " + products)
+	// console.log("\n console log linea 8: " + products)
 	res.render('products', { products })
 };
 
@@ -27,5 +27,9 @@ const addProduct = (req, res) => {
 	res.redirect('/products');	
 };
 
+const addToCart = (req, res) => {
+	console.log('Producto añadido al carrito');
+};
 
-module.exports = { show_all_products, show_add_product, addProduct }
+
+module.exports = { show_all_products, show_add_product, addProduct, addToCart }
