@@ -81,6 +81,30 @@
             }
         }
     });
-    
+
+    $("#submitButton").click(function(ev) {
+        let form = $("#formId");
+        let url = form.attr('action');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(),
+                timeout: 3000,
+                success: function(data) {
+                    console.log("Ajax entro en success")
+                    // Ajax call completed successfully
+                    alert("Form Submited Successfully");
+                    return false
+                },
+                error: function(data) {
+                      
+                    // Some error in ajax call
+                    alert("some Error");
+                }
+            });
+        console.log("ajax paso success y error");
+        }
+    );
+
 })(jQuery);
 

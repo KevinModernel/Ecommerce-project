@@ -1,4 +1,4 @@
-const { createProduct } = require('../services/products-services.js');
+const { createProduct, addToCartDB } = require('../services/products-services.js');
 const { Products } = require('../models/product.js');
 
 const show_all_products = async (req, res) => {
@@ -28,7 +28,9 @@ const addProduct = (req, res) => {
 };
 
 const addToCart = (req, res) => {
-	console.log('Producto añadido al carrito');
+	const product = req.body.product
+	addToCartDB(product);
+	//res.get();
 };
 
 

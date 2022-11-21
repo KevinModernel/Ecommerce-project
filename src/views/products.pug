@@ -50,8 +50,9 @@ html(lang='en')
             .product-img
               img(src="img/product-1.jpg", alt="Product Image")
               .product-status
-              form(action='/products/addToCart', method='POST')
+              form(action="/products/addToCart", method='POST', id=product.name)
                 .product-action
+                  input(type="text" name='product', value=product.name)
                   button.btn.btn-primary(type='submit')
                     i.fa.fa-shopping-cart
             .product-content
