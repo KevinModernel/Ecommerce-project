@@ -28,8 +28,9 @@ const addProduct = (req, res) => {
 };
 
 const addToCart = (req, res) => {
-	const product = req.body.product
-	addToCartDB(product);
+	const name = req.body.name;
+	const price = req.body.price;
+	addToCartDB(name, price);
 	//res.get();
 };
 

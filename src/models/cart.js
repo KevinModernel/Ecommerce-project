@@ -8,7 +8,11 @@ const CartSchema = new mongoose.Schema({
     quantity:{
         type: Number,
         required: [true, 'La cantidad es obligatoria'],
-    }
+    },
+    price:{
+        type: Number,
+        required: [true, 'El precio es obligatorio'],
+    },
 })
 
 const Carts = mongoose.model('Cart', CartSchema)

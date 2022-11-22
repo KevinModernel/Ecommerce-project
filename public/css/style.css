@@ -68,6 +68,20 @@ body {
   outline: 0 !important;
 }
 
+#buy {
+  width: 20%;
+  margin: 0 auto;
+  display:block;
+  margin-bottom: 10px;
+}
+
+#discard {
+  width: 20%;
+  margin: 0 auto;
+  display:block;
+}
+
+
 hr {
   box-sizing: content-box;
   height: 0;

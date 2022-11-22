@@ -1,6 +1,7 @@
 const express = require('express');
 const usersRouter = require('./src/routes/users_routes.js');
 const productsRouter = require('./src/routes/products_routes.js');
+const cartRouter = require('./src/routes/cart_routes.js');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -16,6 +17,7 @@ app.set('view engine', 'pug');
 
 app.use('/', usersRouter);
 app.use('/products', productsRouter);
+app.use('/cart', cartRouter);
 
 // Connect to DB
 mongoose.connect('mongodb+srv://mongodbuser:mongo123@cluster0.kp6gl82.mongodb.net/?retryWrites=true&w=majority',
