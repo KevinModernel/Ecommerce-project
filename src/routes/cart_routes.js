@@ -7,3 +7,4 @@ router.get("/", showCartProducts);
 router.get("/deleteCart", deleteCart);
 
 module.exports = router
+

@@ -14,5 +14,15 @@ const show_adminPanel = (req, res) => {
 	res.render('admin')
 };
 
+const show_aboutUs = (req, res) => {
+	res.render('aboutus')
+};
 
-module.exports = { get_landing, show_signup, signup, show_adminPanel }
+const show_contact = (req, res) => {
+	res.render('contact')
+};
+
+
+
+
+module.exports = { get_landing, show_signup, signup, show_adminPanel, show_aboutUs, show_contact }

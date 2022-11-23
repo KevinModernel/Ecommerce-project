@@ -1,0 +1,173 @@
+doctype html
+html(lang='en')
+  include common/head.pug
+  +head("Starter MVP")
+  body
+    header
+      include common/navbar.pug
+      +navbar()
+      html
+  body
+    // Topbar Start
+    .container-fluid.bg-dark
+      .row.py-2.px-lg-5
+        .col-lg-6.text-center.text-lg-left.mb-2.mb-lg-0
+          .d-inline-flex.align-items-center.text-white
+            small
+              i.fa.fa-phone-alt.mr-2
+              | +012 345 6789
+            small.px-3 |
+            small
+              i.fa.fa-envelope.mr-2
+              | info@example.com
+        .col-lg-6.text-center.text-lg-right
+          .d-inline-flex.align-items-center
+            a.text-white.px-2(href="")
+              i.fab.fa-facebook-f
+            a.text-white.px-2(href="")
+              i.fab.fa-twitter
+            a.text-white.px-2(href="")
+              i.fab.fa-linkedin-in
+            a.text-white.px-2(href="")
+              i.fab.fa-instagram
+            a.text-white.pl-2(href="")
+              i.fab.fa-youtube
+    // Topbar End
+    // Header Start
+    .jumbotron.jumbotron-fluid.mb-5
+      .container.text-center.py-5
+        h1.text-primary.mb-4 Sobre Nosotros
+        .mx-auto(style="width: 100%; max-width: 600px;")
+          .input-group
+            .container.text-center
+    // Header End
+    // About Start
+    .container-fluid.py-5
+      .container
+        .row.align-items-center
+          .col-lg-5.pb-4.pb-lg-0
+            img.img-fluid.w-100(src="img/warehouse.jpg", alt="")
+            .bg-primary.text-dark.text-center.p-4
+              h3.m-0 25+ Años de experiencia
+          .col-lg-7
+            h6.text-primary.text-uppercase.font-weight-bold Acerca de nosotros
+            h1.mb-4 El más rápido &amp; ecónomico mercado online.
+            p.mb-4 Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo
+            .d-flex.align-items-center.pt-2
+              button.btn-play(type="button", data-toggle="modal", data-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", data-target="#videoModal")
+                span
+              h5.font-weight-bold.m-0.ml-4 Reproducir video
+      // Video Modal
+      #videoModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+        .modal-dialog(role="document")
+          .modal-content
+            .modal-body
+              button.close(type="button", data-dismiss="modal", aria-label="Close")
+                span(aria-hidden="true") &amp;times;
+              // 16:9 aspect ratio
+              .embed-responsive.embed-responsive-16by9
+                iframe#video.embed-responsive-item(src="", allowscriptaccess="always", allow="autoplay")
+    // About End
+    // Features Start
+    .container-fluid.bg-secondary.my-5
+      .container
+        .row.align-items-center
+          .col-lg-5
+            img.img-fluid.w-100(src="img/deliverytruck.jpg", alt="")
+          .col-lg-7.py-15.py-lg-0
+            h6.text-primary.text-uppercase.font-weight-bold Why Choose Us
+            h1.mb-4 Faster, Safe and Trusted Logistics Services
+            p.mb-4 Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit.
+            ul.list-inline
+              li
+                h6
+                  i.far.fa-dot-circle.text-primary.mr-3
+                  | Best In Industry
+              li
+                h6
+                  i.far.fa-dot-circle.text-primary.mr-3
+                  | Emergency Services
+              li
+                h6
+                  i.far.fa-dot-circle.text-primary.mr-3
+                  | 24/7 Customer Support
+            a.btn.btn-primary.mt-3.py-2.px-4(href="") Learn More
+    // Features End
+    // Team Start
+    .container-fluid.pt-5
+      .container
+        .text-center.pb-2
+          h6.text-primary.text-uppercase.font-weight-bold Delivery Team
+          h1.mb-4 Meet Our Delivery Team
+        .row
+          .col-lg-3.col-md-6
+            .team.card.position-relative.overflow-hidden.border-0.mb-5
+              img.card-img-top(src="img/team-1.jpg", alt="")
+              .card-body.text-center.p-0
+                .team-text.d-flex.flex-column.justify-content-center.bg-secondary
+                  h5.font-weight-bold Full Name
+                  span Designation
+                .team-social.d-flex.align-items-center.justify-content-center.bg-primary
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-twitter
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-facebook-f
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-linkedin-in
+                  a.btn.btn-outline-dark.btn-social(href="#")
+                    i.fab.fa-instagram
+          .col-lg-3.col-md-6
+            .team.card.position-relative.overflow-hidden.border-0.mb-5
+              img.card-img-top(src="img/team-2.jpg", alt="")
+              .card-body.text-center.p-0
+                .team-text.d-flex.flex-column.justify-content-center.bg-secondary
+                  h5.font-weight-bold Full Name
+                  span Designation
+                .team-social.d-flex.align-items-center.justify-content-center.bg-primary
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-twitter
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-facebook-f
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-linkedin-in
+                  a.btn.btn-outline-dark.btn-social(href="#")
+                    i.fab.fa-instagram
+          .col-lg-3.col-md-6
+            .team.card.position-relative.overflow-hidden.border-0.mb-5
+              img.card-img-top(src="img/team-3.jpg", alt="")
+              .card-body.text-center.p-0
+                .team-text.d-flex.flex-column.justify-content-center.bg-secondary
+                  h5.font-weight-bold Full Name
+                  span Designation
+                .team-social.d-flex.align-items-center.justify-content-center.bg-primary
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-twitter
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-facebook-f
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-linkedin-in
+                  a.btn.btn-outline-dark.btn-social(href="#")
+                    i.fab.fa-instagram
+          .col-lg-3.col-md-6
+            .team.card.position-relative.overflow-hidden.border-0.mb-5
+              img.card-img-top(src="img/team-4.jpg", alt="")
+              .card-body.text-center.p-0
+                .team-text.d-flex.flex-column.justify-content-center.bg-secondary
+                  h5.font-weight-bold Full Name
+                  span Designation
+                .team-social.d-flex.align-items-center.justify-content-center.bg-primary
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-twitter
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-facebook-f
+                  a.btn.btn-outline-dark.btn-social.mr-2(href="#")
+                    i.fab.fa-linkedin-in
+                  a.btn.btn-outline-dark.btn-social(href="#")
+                    i.fab.fa-instagram
+    // Team End
+
+
+
+
+    include common/footer.pug
+    +footer()

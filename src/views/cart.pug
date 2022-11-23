@@ -59,7 +59,9 @@ html(lang='en')
             th(scope="row") #{cart.name}
             td #{cart.quantity}
             td $ #{cart.price}
+            a delete
             td $ #{cart.price*cart.quantity}
+
         tr
             th(scope="row") Total a pagar:
             td -
