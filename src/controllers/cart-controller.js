@@ -16,7 +16,7 @@ const showCartProducts = async (req, res) => {
 		sum = sum + carts[i].price*carts[i].quantity;
 		console.log("\n \n console in sum: " + sum);
 	};
-	res.render('cart', { carts, sum });
+	res.render('cart', { carts, sum, user: req.user });
 };
 
 const deleteCart = async (req, res) => {

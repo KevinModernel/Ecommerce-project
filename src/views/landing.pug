@@ -5,7 +5,7 @@ html(lang='en')
   body
     header
       include common/navbar.pug
-      +navbar()
+      +navbar(user)
       html
   body
     // Topbar Start
@@ -40,6 +40,7 @@ html(lang='en')
         .mx-auto(style="width: 100%; max-width: 600px;")
           .input-group
             .container.text-center
+              if (!user)
                 form(action='/login', method='POST')
                                 div.form-group
                                     label.formGroupExampleInput Email:

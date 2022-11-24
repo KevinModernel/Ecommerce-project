@@ -6,10 +6,19 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+const { initializePassport } = require('./src/utils/passport-config.js')
+const passport = require('passport')
+const baseSession = require('./src/utils/session')
+
 
 app.use(express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(baseSession)
+initializePassport()
+app.use(passport.initialize())
+app.use(passport.session())
 
 // View engine
 app.set('views', './src/views');
