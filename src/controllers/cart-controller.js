@@ -1,5 +1,5 @@
 const { Carts } = require('../models/cart.js');
-
+const { Orders } = require('../models/order.js');
 
 const showCartProducts = async (req, res) => {
 	const carts = await Carts.find();
@@ -24,4 +24,15 @@ const deleteCart = async (req, res) => {
 	res.redirect("/");
 }
 
-module.exports = { showCartProducts, deleteCart }
+const createOrderMW = async (req, res, next) => {
+	const products = await Carts.find(); // brings each instance stored in database. [instance1, instance2, ...]
+	
+
+	next();
+}
+
+const deleteCartMW = async (req, res, next) => {
+	next();
+}
+
+module.exports = { showCartProducts, deleteCart, createOrderMW, deleteCartMW }
