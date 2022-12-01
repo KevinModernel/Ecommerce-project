@@ -13,4 +13,8 @@ mixin navbar(user)
             a.nav-item.nav-link.active(href="/admin") Admin
             if user
               a.nav-item.nav-link(href="/logOut") Cerrar Sesión
-          a.btn.btn-primary.py-2.px-4.d-none.d-lg-block(href="/cart") Carrito
+          if user  
+            a.btn.btn-primary.py-2.px-4.d-none.d-lg-block(href="/cart" id="carrito") Carrito
+          else
+            a.btn.btn-primary.py-2.px-4.d-none.d-lg-block.disabled(href="/cart" id="carrito") Carrito
+

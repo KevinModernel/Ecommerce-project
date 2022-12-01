@@ -9,14 +9,11 @@ router.get('/', get_landing);
 router.get('/signup', show_signup);
 router.post('/signup', passport.authenticate('register', { failureRedirect: '/retrysignup' }), signup)
 router.get('/retrysignup', retry_show_signup);
-
 router.post('/login', passport.authenticate('login', { failureRedirect: '/retrylogin' }), login)
 router.get('/retrylogin', retry_get_landing)
-
 router.get('/logout', logout)
 
 router.get('/admin', show_adminPanel);
-
 router.get("/aboutus", show_aboutUs);
 router.get("/contact", show_contact);
 

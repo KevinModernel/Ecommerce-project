@@ -8,5 +8,6 @@ router.get("/", showCartProducts);
 router.get("/deleteCart", deleteCart);
 router.get("/confirmation", [createOrderMW, deleteCartMW], emailNewOrder)
 
+
 module.exports = router
 
