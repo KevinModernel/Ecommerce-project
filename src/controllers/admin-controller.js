@@ -32,5 +32,27 @@ const restock = async (req, res) => {
 	res.redirect(`/admin/${req.body.adress}`);
 };
 
+const show_edit_products = async (req, res) => {
+	const products = await Products.find({});
+	res.render('editproducts', { products });
+};
 
-module.exports = { show_orders, updateStatus, showCritical, showRestock, restock }
+const editProducts = async (req, res) => {
+	const idProduct = req.params.id;
+	const name = req.body.name;
+	const category = req.body.category;
+	const description = req.body.description;
+	const price = req.body.price;
+	const image = req.body.image;
+	const update = {name,
+					category,
+					description,
+					price,
+					image,
+				};
+	console.log(update);
+	await Products.updateOne({ _id: idProduct}, update);
+	res.redirect('/admin/edit');
+};
+
+module.exports = { show_orders, updateStatus, showCritical, showRestock, show_edit_products, restock, editProducts }

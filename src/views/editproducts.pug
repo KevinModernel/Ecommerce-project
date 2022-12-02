@@ -1,0 +1,73 @@
+doctype html
+html(lang='en')
+  include common/head.pug
+  +head("Starter MVP")
+  body
+    header
+      include common/navbar.pug
+      +navbar(user)
+      html
+  body
+    // Topbar Start
+    .container-fluid.bg-dark
+      .row.py-2.px-lg-5
+        .col-lg-6.text-center.text-lg-left.mb-2.mb-lg-0
+          .d-inline-flex.align-items-center.text-white
+            small
+              i.fa.fa-phone-alt.mr-2
+              | +012 345 6789
+            small.px-3 |
+            small
+              i.fa.fa-envelope.mr-2
+              | info@example.com
+        .col-lg-6.text-center.text-lg-right
+          .d-inline-flex.align-items-center
+            a.text-white.px-2(href="")
+              i.fab.fa-facebook-f
+            a.text-white.px-2(href="")
+              i.fab.fa-twitter
+            a.text-white.px-2(href="")
+              i.fab.fa-linkedin-in
+            a.text-white.px-2(href="")
+              i.fab.fa-instagram
+            a.text-white.pl-2(href="")
+              i.fab.fa-youtube
+    // Topbar End
+    // Header Start
+    .jumbotron.jumbotron-fluid.mb-5
+      .container.text-center.py-5
+        h1.text-primary.mb-4 Admin - Editar productos
+        .mx-auto(style="width: 100%; max-width: 600px;")
+          .input-group
+            .container.text-center
+    // Header End
+    // Bootstrap table Start
+    table.table.table-striped
+      thead
+        tr
+          th(scope="col") Name
+          th(scope="col") Category
+          th(scope="col") Description
+          th(scope="col") Price
+          th(scope="col") Image
+      tbody
+          each product in products
+            form(action=`/admin/edit/${product._id}`, method='POST')
+              tr
+                th(scope="row")
+                  input(type="text", name="name", placeholder=product.name, value=product.name).form-control
+                td 
+                  input(type="text", name="category", placeholder=product.category, value=product.category).form-control
+                td
+                  input(type="text", name="description", placeholder=product.description, value=product.description).form-control
+                td
+                  input(type="text", name="price", placeholder=product.price, value=product.price).form-control
+                td
+                  input(type="text", name="image", placeholder=product.image, value=product.image).form-control
+                td
+                  button.btn-outline-primary.btn-sm(type='submit') Editar
+
+    // Bootstrap table End
+
+    include common/footer.pug
+    +footer()

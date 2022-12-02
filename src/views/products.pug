@@ -48,7 +48,7 @@ html(lang='en')
         .product-item
           .product-single
             .product-img
-              img(src="img/product-1.jpg", alt="Product Image")
+              img(src=`img/${product.image}`, alt="Product Image")
               .product-status
               form(action="/products/addToCart", method='POST', id=product.name)
                 .product-action
