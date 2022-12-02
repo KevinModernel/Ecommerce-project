@@ -1,4 +1,5 @@
 const { Orders } = require('../models/order.js');
+const { Products } = require('../models/product.js'); 
 
 const show_orders = async (req, res) => {
 	const ordersStored = await Orders.find();
@@ -11,5 +12,11 @@ const updateStatus = async (req, res) => {
 	res.redirect('/admin/orders');
 };
 
+const showCritical = async (req, res) => {
+	const criticalStock = await Products.find({ quantity: { $lt: 5} });
+	console.log("CriticalStock: " + criticalStock);
+	res.render('critical');
+};
 
-module.exports = { show_orders, updateStatus }
+
+module.exports = { show_orders, updateStatus, showCritical }
