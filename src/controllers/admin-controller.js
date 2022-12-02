@@ -17,6 +17,11 @@ const showCritical = async (req, res) => {
 	res.render('critical', { criticalStock });
 };
 
+const showRestock = async (req, res) => {
+	const products = await Products.find({});
+	res.render('restock', { products });
+};
+
 const restock = async (req, res) => {
 	const restock = Number(req.body.restock);
 	const idProduct = req.params.id;
@@ -24,8 +29,8 @@ const restock = async (req, res) => {
 	const currentStockProduct = product.quantity;
 	const actualStock = currentStockProduct + restock;
 	await Products.updateOne({ _id: idProduct}, { quantity: actualStock});
-	res.redirect('/admin/critical');
-}
+	res.redirect(`/admin/${req.body.adress}`);
+};
 
 
-module.exports = { show_orders, updateStatus, showCritical, restock }
+module.exports = { show_orders, updateStatus, showCritical, showRestock, restock }

@@ -46,11 +46,11 @@ html(lang='en')
       thead
         tr
           th(scope="col") Producto
-          th(scope="col") Stock Actual (< 5)
+          th(scope="col") Stock Actual
           th(scope="col") Reponer Stock
         
       tbody
-        each product in criticalStock
+        each product in products
           tr
             th(scope="row") #{product.name}
             td #{product.quantity}
@@ -59,7 +59,7 @@ html(lang='en')
                 .row
                   .col
                     input(type="text", name="restock", placeholder="Cantidad a reponer", value='').form-control
-                    input(type="hidden", name="adress", value='critical').form-control
+                    input(type="hidden", name="adress", value='restock').form-control
                   .col
                     button.btn-outline-primary.btn-sm(type='submit') Reponer
 
