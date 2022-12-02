@@ -41,19 +41,28 @@ html(lang='en')
           .input-group
             .container.text-center
     // Header End
-    a.button.btn.text-center.mt-10.btn.btn-primary(href="cart/confirmation" id="buy") Realizar compra
-        |
-    a.button.btn.mt-10.btn.btn-primary(href="cart/deleteCart" id="discard") Descartar carrito
     // Bootstrap table Start
     table.table.table-striped
       thead
         tr
           th(scope="col") Producto
-          th(scope="col") Cantidad
-          th(scope="col") Precio Unitario
-          th(scope="col") Precio Total
+          th(scope="col") Stock Actual (< 5)
+          th(scope="col") Reponer Stock
         
       tbody
+        each product in criticalStock
+          tr
+            th(scope="row") #{product.name}
+            td #{product.quantity}
+            td
+              form(action=`/admin/restock/${product._id}`, method='POST')
+                .row
+                  .col
+                    input(type="text", name="restock", placeholder="Cantidad a reponer", value='').form-control
+                  .col
+                    button.btn-outline-primary.btn-sm(type='submit') Reponer
+
+
     // Bootstrap table End
         
 
