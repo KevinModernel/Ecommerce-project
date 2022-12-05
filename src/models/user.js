@@ -6,6 +6,10 @@ const UserSchema = new mongoose.Schema({
     city: String,
     address: String,
 	password: String,
+	isAdmin:{
+		type: String,
+		"default": "false"
+	}
 });
 
 const Users = mongoose.model("User", UserSchema);
