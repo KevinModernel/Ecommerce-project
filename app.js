@@ -33,6 +33,9 @@ app.use('/', usersRouter);
 app.use('/admin', adminRouter)
 app.use('/products', productsRouter);
 app.use('/cart', cartRouter);
+app.get('*', function(req, res){
+  res.render('notfound');
+});
 
 // Connect to DB
 mongoose.connect('mongodb+srv://mongodbuser:mongo123@cluster0.kp6gl82.mongodb.net/?retryWrites=true&w=majority',
