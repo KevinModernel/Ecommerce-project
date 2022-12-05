@@ -7,7 +7,7 @@ const show_adminPanel = (req, res) => {
 
 const show_orders = async (req, res) => {
 	const ordersStored = await Orders.find();
-	res.render('orders', { ordersStored });
+	res.render('orders', { ordersStored, user: req.user });
 };
 
 const updateStatus = async (req, res) => {
@@ -18,12 +18,12 @@ const updateStatus = async (req, res) => {
 
 const showCritical = async (req, res) => {
 	const criticalStock = await Products.find({ quantity: { $lt: 5} });
-	res.render('critical', { criticalStock });
+	res.render('critical', { criticalStock, user: req.user });
 };
 
 const showRestock = async (req, res) => {
 	const products = await Products.find({});
-	res.render('restock', { products });
+	res.render('restock', { products, user: req.user });
 };
 
 const restock = async (req, res) => {
@@ -38,7 +38,7 @@ const restock = async (req, res) => {
 
 const show_edit_products = async (req, res) => {
 	const products = await Products.find({});
-	res.render('editproducts', { products });
+	res.render('editproducts', { products, user: req.user });
 };
 
 const editProducts = async (req, res) => {
