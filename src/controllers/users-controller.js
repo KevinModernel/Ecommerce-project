@@ -32,9 +32,7 @@ const logout = function(req, res) {
 	});
 };  
 
-const show_adminPanel = (req, res) => {
-	res.render('admin', { user: req.user } )
-};
+
 
 const show_aboutUs = (req, res) => {
 	res.render('aboutus', { user: req.user } )
@@ -47,4 +45,4 @@ const show_contact = (req, res) => {
 
 
 
-module.exports = { get_landing, show_signup, signup, retry_show_signup, show_adminPanel, show_aboutUs, show_contact, login, retry_get_landing, logout }
+module.exports = { get_landing, show_signup, signup, retry_show_signup, show_aboutUs, show_contact, login, retry_get_landing, logout }

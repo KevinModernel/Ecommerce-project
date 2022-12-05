@@ -1,6 +1,10 @@
 const { Orders } = require('../models/order.js');
 const { Products } = require('../models/product.js'); 
 
+const show_adminPanel = (req, res) => {
+	res.render('admin', { user: req.user } )
+};
+
 const show_orders = async (req, res) => {
 	const ordersStored = await Orders.find();
 	res.render('orders', { ordersStored });
@@ -55,4 +59,4 @@ const editProducts = async (req, res) => {
 	res.redirect('/admin/edit');
 };
 
-module.exports = { show_orders, updateStatus, showCritical, showRestock, show_edit_products, restock, editProducts }
+module.exports = { show_adminPanel, show_orders, updateStatus, showCritical, showRestock, show_edit_products, restock, editProducts }
