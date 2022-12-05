@@ -1,5 +1,4 @@
 const isAdmin = ( req, res, next ) => {
-    console.log("req.user: " + req.user);
     if (req.user) { // Si esta logeado, se fija si es admin.
     	const isAdmin = req.user.isAdmin;
     	if (isAdmin == 'true') { // Si es admin, te permite ir a rutas de admin.

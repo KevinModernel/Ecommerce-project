@@ -54,9 +54,14 @@ const editProducts = async (req, res) => {
 					price,
 					image,
 				};
-	console.log(update);
 	await Products.updateOne({ _id: idProduct}, update);
 	res.redirect('/admin/edit');
 };
 
-module.exports = { show_adminPanel, show_orders, updateStatus, showCritical, showRestock, show_edit_products, restock, editProducts }
+const deleteProduct = async (req, res) => {
+	const idProduct = req.params.id;
+	await Products.findOneAndRemove( {id: idProduct} );
+	res.redirect('/admin/edit');
+};
+
+module.exports = { show_adminPanel, show_orders, updateStatus, showCritical, showRestock, show_edit_products, restock, editProducts, deleteProduct }

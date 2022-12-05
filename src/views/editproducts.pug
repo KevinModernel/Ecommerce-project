@@ -52,8 +52,8 @@ html(lang='en')
           th(scope="col") Image
       tbody
           each product in products
-            form(action=`/admin/edit/${product._id}`, method='POST')
-              tr
+            tr
+              form(action="/admin/edit/" + product._id, method='POST')
                 th(scope="row")
                   input(type="text", name="name", placeholder=product.name, value=product.name).form-control
                 td 
@@ -65,7 +65,10 @@ html(lang='en')
                 td
                   input(type="text", name="image", placeholder=product.image, value=product.image).form-control
                 td
-                  button.btn-outline-primary.btn-sm(type='submit') Editar
+                  button.btn-outline-primary.btn-sm(type='submit') Editar Producto
+              form(action="/admin/delete/" + product._id, method='POST')
+                td  
+                  button.btn-outline-primary.btn-sm(type='submit') Eliminar producto
 
     // Bootstrap table End
 
