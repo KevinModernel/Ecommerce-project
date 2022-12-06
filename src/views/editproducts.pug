@@ -36,39 +36,41 @@ html(lang='en')
     // Header Start
     .jumbotron.jumbotron-fluid.mb-5
       .container.text-center.py-5
-        h1.text-primary.mb-4 Carrito de compras
+        h1.text-primary.mb-4 Admin - Editar productos
         .mx-auto(style="width: 100%; max-width: 600px;")
           .input-group
             .container.text-center
     // Header End
-    a.button.btn.text-center.mt-10.btn.btn-primary(href="cart/confirmation" id="buy") Realizar compra
-        |
-    a.button.btn.mt-10.btn.btn-primary(href="cart/deleteCart" id="discard") Descartar carrito
     // Bootstrap table Start
     table.table.table-striped
       thead
         tr
-          th(scope="col") Producto
-          th(scope="col") Cantidad
-          th(scope="col") Precio Unitario
-          th(scope="col") Precio Total
-        
+          th(scope="col") Name
+          th(scope="col") Category
+          th(scope="col") Description
+          th(scope="col") Price
+          th(scope="col") Image
       tbody
-        each cart in carts
-          tr
-            th(scope="row") #{cart.name}
-            td #{cart.quantity}
-            td $ #{cart.price}
-            a delete
-            td $ #{cart.price*cart.quantity}
+          each product in products
+            tr
+              form(action="/admin/edit/" + product._id, method='POST')
+                th(scope="row")
+                  input(type="text", name="name", placeholder=product.name, value=product.name).form-control
+                td 
+                  input(type="text", name="category", placeholder=product.category, value=product.category).form-control
+                td
+                  input(type="text", name="description", placeholder=product.description, value=product.description).form-control
+                td
+                  input(type="text", name="price", placeholder=product.price, value=product.price).form-control
+                td
+                  input(type="text", name="image", placeholder=product.image, value=product.image).form-control
+                td
+                  button.btn-outline-primary.btn-sm(type='submit') Editar Producto
+              form(action="/admin/delete/" + product._id, method='POST')
+                td  
+                  button.btn-outline-primary.btn-sm(type='submit') Eliminar producto
 
-        tr
-            th(scope="row") Total a pagar:
-            td -
-            td -
-            td $ #{sum}
     // Bootstrap table End
-        
 
     include common/footer.pug
     +footer()

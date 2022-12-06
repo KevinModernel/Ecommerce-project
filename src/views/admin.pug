@@ -5,7 +5,7 @@ html(lang='en')
   body
     header
       include common/navbar.pug
-      +navbar()
+      +navbar(user)
       html
   body
     // Topbar Start
@@ -52,25 +52,34 @@ html(lang='en')
               i.fa.fa-2x.pr-3
               h6.text-white.font-weight-medium.m-0 Pedidos
             p Listado de compras realizadas
-            a.border-bottom.text-decoration-none(href="orders") Ir a Pedidos
+            a.border-bottom.text-decoration-none(href="admin/orders") Ir a Pedidos
           .col-lg-3.col-md-6.text-center.mb-5
             .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
               i.fa.fa-2x.pr-3
               h6.text-white.font-weight-medium.m-0 Stocks Críticos
             p Listado de productos con stock menor a 5 unidades
-            a.border-bottom.text-decoration-none(href="critical") Ir a Stocks Críticos
+            a.border-bottom.text-decoration-none(href="admin/critical") Ir a Stocks Críticos
           .col-lg-3.col-md-6.text-center.mb-5
             .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
               i.fa.fa-2x.pr-3
               h6.text-white.font-weight-medium.m-0 Reponer Stocks
             p Reponer stock de productos existentes
-            a.border-bottom.text-decoration-none(href="replenish") Ir a Reponer Stocks
+            a.border-bottom.text-decoration-none(href="admin/restock") Ir a Reponer Stocks
           .col-lg-3.col-md-6.text-center.mb-5
             .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
               i.fa.fa-2x.pr-3
+              h6.text-white.font-weight-medium.m-0 Editar Productos
+            p Editar información de productos existentes
+            a.border-bottom.text-decoration-none(href="admin/edit") Ir a Editar Productos
+          .col-lg-3.col-md-6.text-center.mb-5
+            .d-flex.align-items-center.justify-content-center.bg-primary.mb-4.p-4
+              i.fa.fa-2x.pr-3
+
+
+
               h6.text-white.font-weight-medium.m-0 Añadir Productos
             p Añadir nuevo productos a la venta
-            a.border-bottom.text-decoration-none(href="products/addproduct") ir a Añadir Productos
+            a.border-bottom.text-decoration-none(href="admin/addproduct") ir a Añadir Productos
     // Services End
 
 

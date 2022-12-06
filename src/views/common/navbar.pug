@@ -1,18 +1,18 @@
-mixin navbar()
+mixin navbar(user)
     .container-fluid.p-0
       nav.navbar.navbar-expand-lg.bg-light.navbar-light.py-3.py-lg-0.px-lg-5
         a.navbar-brand.ml-lg-3(href="/")
-          h1.m-0.display-5.text-uppercase.text-primary
+          h3.m-0.display-5.text-uppercase.text-primary
             i.fa.fa-truck.mr-2
             | Easy Market
-        button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarCollapse")
-          span.navbar-toggler-icon
-        #navbarCollapse.collapse.navbar-collapse.justify-content-between.px-lg-3
           .navbar-nav.m-auto.py-0
             a.nav-item.nav-link(href="/") Inicio
             a.nav-item.nav-link(href="/products") Productos
             a.nav-item.nav-link(href="/aboutUs") Sobre Nosotros
             a.nav-item.nav-link(href="/contact") Contacto
-            a.nav-item.nav-link(href="/logOut") Cerrar Sesión
-            a.nav-item.nav-link.active(href="/admin") Admin
-          a.btn.btn-primary.py-2.px-4.d-none.d-lg-block(href="/cart") Carrito
+            if user
+              a.nav-item.nav-link(href="/logOut") Cerrar Sesión
+              if (user.isAdmin == "true")
+                a.nav-item.nav-link.active(href="/admin") Admin
+          if user  
+            a.btn.btn-primary.py-2.px-4.d-none.d-lg-block(href="/cart" id="carrito") Carrito

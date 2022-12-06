@@ -5,7 +5,7 @@ html(lang='en')
   body
     header
       include common/navbar.pug
-      +navbar()
+      +navbar(user)
       html
   body
     // Topbar Start
@@ -40,26 +40,36 @@ html(lang='en')
         .mx-auto(style="width: 100%; max-width: 600px;")
           .input-group
             .container.text-center
+    // Filter button Start
+    .btn-group(role="group", aria-label="Button group with nested dropdown")
+      .btn-group(role="group")
+        button#btnGroupDrop1.btn.btn-secondary.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+          | Filtrar por Categoría
+        .dropdown-menu(aria-labelledby="btnGroupDrop1")
+          a.dropdown-item(href="/products") Todos
+          a.dropdown-item(href="/products/Almacen") Almacen
+          a.dropdown-item(href="/products/Aceites") Aceites
+          a.dropdown-item(href="/products/Bebidas") Bebidas
+          a.dropdown-item(href="/products/Limpieza") Limpieza
+          a.dropdown-item(href="/products/Snacks") Snacks
+    // Filter button End
     // Grid Style 1 Start
-    .grid-title
-      h2 Product Grid Style 1
     .product-grid.grid-1
       each product in products
         .product-item
           .product-single
             .product-img
-              img(src="img/product-1.jpg", alt="Product Image")
+              img(src="../img/"+product.image, alt="Product Image")
               .product-status
               form(action="/products/addToCart", method='POST', id=product.name)
                 .product-action
-                  input(type="text" name='name', value=product.name)
-                  input(type="text" name='price', value=product.price)
+                  input(type="hidden" name='name', value=product.name)
+                  input(type="hidden" name='price', value=product.price)
                   button.btn.btn-primary(type='submit')
                     i.fa.fa-shopping-cart
             .product-content
               .product-title
-                h2
-                  a(href="") #{product.name}
+                h2 #{product.name}
               .product-price
                 h2 $ #{product.price}
                 h2

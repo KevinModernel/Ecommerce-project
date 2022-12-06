@@ -82,6 +82,7 @@
         }
     });
 
+    // AJAX http request to add products to cart
     $("#submitButton").click(function(ev) {
         let form = $("#formId");
         let url = form.attr('action');

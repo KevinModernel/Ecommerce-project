@@ -1,5 +1,5 @@
 const emailNewOrder = (req, res) => {
-	console.log("emailNewOrder controller");
+	console.log("mail enviado");
 	res.redirect("/");
 };
 

@@ -1,28 +1,48 @@
+const { Users } = require('../models/user.js');
+
 const get_landing = (req, res) => {
-	res.render('landing')
+	res.render('landing', { user: req.user } )
+};
+
+const retry_get_landing = (req, res) => {
+	res.render('landing', { retryLogIn: true })
+};
+
+const login = (req, res) => {
+	res.redirect('/products')
 };
 
 const show_signup = (req, res) => {
 	res.render('../views/signup')
 };
 
+const retry_show_signup = (req, res) => {
+	res.render('../views/signup', { retrySignUp: true })
+};
+
 const signup = (req, res) => {
 	res.redirect('/products')
 };
 
-const show_adminPanel = (req, res) => {
-	res.render('admin')
-};
+const logout = function(req, res) {
+	req.logout(function(err) {
+		if (err) { return next(err) };
+		req.session.destroy();
+		res.redirect('/cart/deletecart');
+	});
+};  
+
+
 
 const show_aboutUs = (req, res) => {
-	res.render('aboutus')
+	res.render('aboutus', { user: req.user } )
 };
 
 const show_contact = (req, res) => {
-	res.render('contact')
+	res.render('contact', { user: req.user } )
 };
 
 
 
 
-module.exports = { get_landing, show_signup, signup, show_adminPanel, show_aboutUs, show_contact }
+module.exports = { get_landing, show_signup, signup, retry_show_signup, show_aboutUs, show_contact, login, retry_get_landing, logout }

@@ -36,39 +36,31 @@ html(lang='en')
     // Header Start
     .jumbotron.jumbotron-fluid.mb-5
       .container.text-center.py-5
-        h1.text-primary.mb-4 Carrito de compras
+        h1.text-primary.mb-4 Admin - Ordenes de Compra
         .mx-auto(style="width: 100%; max-width: 600px;")
           .input-group
             .container.text-center
     // Header End
-    a.button.btn.text-center.mt-10.btn.btn-primary(href="cart/confirmation" id="buy") Realizar compra
-        |
-    a.button.btn.mt-10.btn.btn-primary(href="cart/deleteCart" id="discard") Descartar carrito
     // Bootstrap table Start
     table.table.table-striped
       thead
         tr
-          th(scope="col") Producto
-          th(scope="col") Cantidad
-          th(scope="col") Precio Unitario
-          th(scope="col") Precio Total
-        
+          th(scope="col") Estatus
+          th(scope="col") Email
+          th(scope="col") Nombre
+          th(scope="col") Fecha
       tbody
-        each cart in carts
-          tr
-            th(scope="row") #{cart.name}
-            td #{cart.quantity}
-            td $ #{cart.price}
-            a delete
-            td $ #{cart.price*cart.quantity}
-
-        tr
-            th(scope="row") Total a pagar:
-            td -
-            td -
-            td $ #{sum}
+          each order in ordersStored
+            tr
+              th(scope="row") #{order.status}
+              td #{order.email}
+              td #{order.name}
+              td #{order.date}
+              td
+                form(action=`/admin/orders/${order._id}?_method=PUT`, method='POST')
+                  input(type="hidden" name="_method" value="PUT")
+                  button.btn-outline-primary.btn-sm(type='submit') Entregado
     // Bootstrap table End
-        
 
     include common/footer.pug
     +footer()
