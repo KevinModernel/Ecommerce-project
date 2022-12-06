@@ -8,31 +8,6 @@ html(lang='en')
       +navbar(user)
       html
   body
-    // Topbar Start
-    .container-fluid.bg-dark
-      .row.py-2.px-lg-5
-        .col-lg-6.text-center.text-lg-left.mb-2.mb-lg-0
-          .d-inline-flex.align-items-center.text-white
-            small
-              i.fa.fa-phone-alt.mr-2
-              | +012 345 6789
-            small.px-3 |
-            small
-              i.fa.fa-envelope.mr-2
-              | info@example.com
-        .col-lg-6.text-center.text-lg-right
-          .d-inline-flex.align-items-center
-            a.text-white.px-2(href="")
-              i.fab.fa-facebook-f
-            a.text-white.px-2(href="")
-              i.fab.fa-twitter
-            a.text-white.px-2(href="")
-              i.fab.fa-linkedin-in
-            a.text-white.px-2(href="")
-              i.fab.fa-instagram
-            a.text-white.pl-2(href="")
-              i.fab.fa-youtube
-    // Topbar End
     // Header Start
     .jumbotron.jumbotron-fluid.mb-5
       .container.text-center.py-5
@@ -82,51 +57,5 @@ html(lang='en')
               .embed-responsive.embed-responsive-16by9
                 iframe#video.embed-responsive-item(src="", allowscriptaccess="always", allow="autoplay")
     // About End
-    // Testimonial Start
-    .container-fluid.py-5
-      .container
-        .text-center.pb-2
-          h6.text-primary.text-uppercase.font-weight-bold Testimonial
-          h1.mb-4 Our Clients Say
-        .owl-carousel.testimonial-carousel
-          .position-relative.bg-secondary.p-4
-            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
-            .d-flex.align-items-center.mb-3
-              img.img-fluid.rounded-circle(src="img/testimonial-1.jpg", style="width: 60px; height: 60px;", alt="")
-              .ml-3
-                h6.font-weight-semi-bold.m-0 Client Name
-                small - Profession
-            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
-          .position-relative.bg-secondary.p-4
-            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
-            .d-flex.align-items-center.mb-3
-              img.img-fluid.rounded-circle(src="img/testimonial-2.jpg", style="width: 60px; height: 60px;", alt="")
-              .ml-3
-                h6.font-weight-semi-bold.m-0 Client Name
-                small - Profession
-            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
-          .position-relative.bg-secondary.p-4
-            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
-            .d-flex.align-items-center.mb-3
-              img.img-fluid.rounded-circle(src="img/testimonial-3.jpg", style="width: 60px; height: 60px;", alt="")
-              .ml-3
-                h6.font-weight-semi-bold.m-0 Client Name
-                small - Profession
-            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
-          .position-relative.bg-secondary.p-4
-            i.fa.fa-3x.fa-quote-right.text-primary.position-absolute(style="top: -6px; right: 0;")
-            .d-flex.align-items-center.mb-3
-              img.img-fluid.rounded-circle(src="img/testimonial-4.jpg", style="width: 60px; height: 60px;", alt="")
-              .ml-3
-                h6.font-weight-semi-bold.m-0 Client Name
-                small - Profession
-            p.m-0 Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita
-    // Testimonial End
-
-
-
-
-
-
     include common/footer.pug
     +footer()
