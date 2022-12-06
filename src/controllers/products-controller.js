@@ -3,7 +3,6 @@ const { Products } = require('../models/product.js');
 
 const show_all_products = async (req, res) => {
 	const products = await Products.find();
-	//console.log("\nshow all products req.name: " + req.user.name) // te tira undefined req.name, por que?
 	res.render('products', { products, user: req.user })
 };
 
@@ -31,5 +30,12 @@ const addToCart = (req, res) => {
 	//res.get();
 };
 
+const show_category = async (req, res) => {
+	const category = req.params.category;
+	console.log("category: " + category);
+	const products = await Products.find({ category : category })
+	res.render('products', { products, user: req.user })
+};
 
-module.exports = { show_all_products, show_add_product, addProduct, addToCart }
+
+module.exports = { show_all_products, show_add_product, addProduct, addToCart, show_category }
