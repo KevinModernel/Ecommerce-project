@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const adminRouter = require('./src/routes/admin_routes.js');
 const usersRouter = require('./src/routes/users_routes.js');
@@ -38,7 +40,7 @@ app.get('*', function(req, res){
 });
 
 // Connect to DB
-mongoose.connect('mongodb+srv://mongodbuser:mongo123@cluster0.kp6gl82.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGOURL,
 	 {
 	 	useNewUrlParser: true
 	 })
@@ -46,8 +48,8 @@ mongoose.connect('mongodb+srv://mongodbuser:mongo123@cluster0.kp6gl82.mongodb.ne
 		.catch(err => console.error(err));
 // Innitialize Express Server
 try {
-	app.listen(3000);
-	console.log("Express running on port 3000");
+	app.listen(process.env.PORT);
+	console.log("Express running on port: "+ process.env.PORT);
 } catch (e) {
 	console.error('Unable to stablish server: ', e);
 };
