@@ -46,10 +46,12 @@ mongoose.connect(process.env.MONGOURL,
 	 })
 		.then(db => console.log('DB is connected'))
 		.catch(err => console.error(err));
+
 // Innitialize Express Server
+const PORT = process.env.PORT || 3000
 try {
-	app.listen(process.env.PORT);
-	console.log("Express running on port: "+ process.env.PORT);
+	app.listen(PORT);
+	console.log("Express running on port: " + PORT);
 } catch (e) {
 	console.error('Unable to stablish server: ', e);
 };
