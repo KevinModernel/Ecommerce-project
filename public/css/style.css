@@ -4804,7 +4804,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   background-color: #e9ecef;
 }
 
@@ -7457,7 +7457,7 @@ button.bg-dark:focus {
 
 .mt-5,
 .my-5 {
-  margin-top: 3rem !important;
+  margin-top: 0rem !important;
 }
 
 .mr-5,
