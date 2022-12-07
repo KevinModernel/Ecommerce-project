@@ -31,23 +31,24 @@ html(lang='en')
     // Grid Style 1 Start
     .product-grid.grid-1
       each product in products
-        .product-item
-          .product-single
-            .product-img
-              img(src="../img/"+product.image, alt="Product Image")
-              .product-status
-              form(action="/products/addToCart", method='POST', id=product.name)
-                .product-action
-                  input(type="hidden" name='name', value=product.name)
-                  input(type="hidden" name='price', value=product.price)
-                  button.btn.btn-primary(type='submit')
-                    i.fa.fa-shopping-cart
-            .product-content
-              .product-title
-                h2 #{product.name}
-              .product-price
-                h2 $ #{product.price}
-                h2
+        if product.quantity > 0
+          .product-item
+            .product-single
+              .product-img
+                img(src="../img/"+product.image, alt="Product Image")
+                .product-status
+                form(action="/products/addToCart", method='POST', id=product.name)
+                  .product-action
+                    input(type="hidden" name='name', value=product.name)
+                    input(type="hidden" name='price', value=product.price)
+                    button.btn.btn-primary(type='submit')
+                      i.fa.fa-shopping-cart
+              .product-content
+                .product-title
+                  h2 #{product.name}
+                .product-price
+                  h2 $ #{product.price}
+                  h2
     // Grid Style 1 End
 
 
