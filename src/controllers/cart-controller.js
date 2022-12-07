@@ -1,6 +1,6 @@
 const { Carts } = require('../models/cart.js');
 const { Orders } = require('../models/order.js');
-const { createOrder } = require('../services/carts-services.js')
+const { createOrder, removeStock } = require('../services/carts-services.js');
 
 const showCartProducts = async (req, res) => {
 	const carts = await Carts.find();
@@ -17,15 +17,28 @@ const deleteCart = async (req, res) => {
 	res.redirect("/");
 }
 
+// To delete cart after order is confirmed.
+const deleteCartMW = async (req, res, next) => {
+	await Carts.deleteMany();
+	next();
+}
+
 const createOrderMW = async (req, res, next) => {
 	const products = await Carts.find(); // brings each instance stored in database. [instance1, instance2, ...]
 	createOrder(products, req.user.email, req.user.name);
 	next();
 }
-// To delete cart after order is confirmed.
-const deleteCartMW = async (req, res, next) => {
-	//await Carts.deleteMany();
+
+const removeStockMW = async (req, res, next) => {
+	const cartProducts = await Carts.find();
+	await removeStock(cartProducts);
 	next();
 }
 
-module.exports = { showCartProducts, deleteCart, createOrderMW, deleteCartMW }
+const deleteFromCart = async (req, res) => {
+	const cartId = req.params.cartId;
+	await Carts.findOneAndDelete({ _id: cartId });
+	res.redirect("/cart");
+};
+
+module.exports = { showCartProducts, deleteCart, createOrderMW, removeStockMW, deleteCartMW, deleteFromCart }
