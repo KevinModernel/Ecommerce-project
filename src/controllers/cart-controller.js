@@ -35,5 +35,10 @@ const removeStockMW = async (req, res, next) => {
 	next();
 }
 
+const deleteFromCart = async (req, res) => {
+	const cartId = req.params.cartId;
+	await Carts.findOneAndDelete({ _id: cartId });
+	res.redirect("/cart");
+};
 
-module.exports = { showCartProducts, deleteCart, createOrderMW, removeStockMW, deleteCartMW, }
+module.exports = { showCartProducts, deleteCart, createOrderMW, removeStockMW, deleteCartMW, deleteFromCart }

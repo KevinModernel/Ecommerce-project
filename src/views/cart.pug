@@ -34,9 +34,10 @@ html(lang='en')
             th(scope="row") #{cart.name}
             td #{cart.quantity}
             td $ #{cart.price}
-            a delete
             td $ #{cart.price*cart.quantity}
-
+            td
+              form(action="/cart/deletefromcart/" + cart._id, method='POST')
+                button.btn-outline-primary.btn-sm(type='submit') Eliminar Producto
         tr
             th(scope="row") Total a pagar:
             td -
