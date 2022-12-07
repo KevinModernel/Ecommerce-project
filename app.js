@@ -40,7 +40,7 @@ app.get('*', function(req, res){
 });
 
 // Connect to DB
-mongoose.connect(process.env.MONGOURL,
+mongoose.connect('mongodb+srv://mongodbuser:mongo123@cluster0.kp6gl82.mongodb.net/?retryWrites=true&w=majority',
 	 {
 	 	useNewUrlParser: true
 	 })
