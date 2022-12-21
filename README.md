@@ -40,6 +40,8 @@ Una vez registrado o logeado exitosamente, se redirecciona al listado de product
 
 ![image](https://user-images.githubusercontent.com/114360790/209013245-5d988329-4313-40ad-84bf-302813078764.png)
 
+Los productos pueden filtrarse por categoria haciendo click en el menú desplegable.
+
 
 
 
