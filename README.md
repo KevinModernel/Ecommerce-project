@@ -42,6 +42,22 @@ Una vez registrado o logeado exitosamente, se redirecciona al listado de product
 
 Los productos pueden filtrarse por categoria haciendo click en el menú desplegable.
 
+![image](https://user-images.githubusercontent.com/114360790/209019501-2b249f2a-e0d0-484f-9a30-0a47d531b12c.png)
+
+En "productos" podemos posicionar el cursor sobre los productos, y aparecerá un botón para "Anadir al carro".
+
+![image](https://user-images.githubusercontent.com/114360790/209019762-60260000-136e-4e0b-bbe2-08d5c839c90b.png)
+
+Una vez agregado, presionando en el botón "Carrito" de la barra de navegación vemos los productos agregados.
+
+![image](https://user-images.githubusercontent.com/114360790/209020027-8710799d-604b-4050-9005-b2202b2c334f.png)
+
+Los productos agregados al carrito se almacenan en la base de datos, en la collection "carts":
+
+![image](https://user-images.githubusercontent.com/114360790/209020672-ae1414a1-c45f-4a74-a6d0-93ee729ea3fc.png)
+
+
+
 
 
 
