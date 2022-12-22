@@ -4,19 +4,20 @@
  Proyecto realizado para el aprendizaje, estudio e implementación de siguientes tecnologías/herramientas:
  
  BackEnd:
-  - NodeJS
-  - Express (router, HTTP Requests)
-  - MongoDB y Mongoose
-  - Passport y bcrypt
+  - NodeJS (Correr JS del lado del servidor)
+  - Express (Web Framework para manejar HTTP Requests, disponer archivos estáticos, utilizar templates, manejo de sesiones)
+  - Mongoose (ODM para NoSQL DB)
+  - MongoDB (NoSQL DB para almacenar usuarios, productos, ordenes de compra, carrito de compra y session)
+  - Passport y bcrypt (Autenticación de usuario y encriptado de contraseña)
  
  FrontEnd:
-  - Template Engine PUG
-  - HTML y CSS
-  - Bootstrap
-  - jQuery
-  - JavaScript
+  - PUG (Template Engine para crear las views)
+  - HTML y CSS (Formato y estilo)
+  - Bootstrap (Tablas y botones)
+  - jQuery (AJAX http request para añadir productos al carrito sin actualizar browser)
+  - JavaScript (Elementos interactivos del front)
 
-Además de aprender sobre programación asincrónica, patrones de diseño, PostMan, principio SOLID
+Además de aprender sobre programación asincrónica, patrones de diseño, PostMan, principio SOLID.
 
 Al entrar a la página ('/') sin estar logeado, se llega al menú de login:
 
