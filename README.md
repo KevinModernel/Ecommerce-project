@@ -61,8 +61,11 @@ Si apretamos "Eliminar Producto" en la derecha del listado del Carrito, quitamos
 Si apretamos "Confirmar compra":
 
 1- Se crea una orden, que se almacena en la BD en la collection "orders". Cada orden podrá ser obtenida por el Admin, y así ver las compras realizadas.
+
 2- Se resta la cantidad de productos comprados, del stock total.  (stock total almacenado en collection "products").
+
 3- Se elimina el carrito de la BD, quedando vacio.
+
 4- Se envia un mail con la orden al comprador.
 
 Por otro lado, si el usuario que se logea es admin (En la base de datos, collection "Users" está el campo isAdmin que puede ser true or false), en la barra de navegacion se adicionará el botón "Admin", para acceder al Panel de Control (/admin).
@@ -72,5 +75,33 @@ Por otro lado, si el usuario que se logea es admin (En la base de datos, collect
 Ingresando, se despliegan distintas opciones para la administración del Ecommerce. Todas las opciones (rutas) tienen un middleware para verificar si el usuario logeado es admin, en caso de no serlo, no permite acceder a la ruta.
 
 ![image](https://user-images.githubusercontent.com/114360790/209178620-1900d26a-6a12-40fd-8712-151bdc57b789.png)
+
+Añadir producto (/admin/addproduct):
+
+![image](https://user-images.githubusercontent.com/114360790/209182939-5aee4f2d-2754-4ed3-86cd-95277a6362ad.png)
+
+Formulario para añadir nuevo producto, completando todos los campos, se crea un nuevo producto y se almacena en la BD en la collection "products". (La imagen debe estar guardada en la carpeta public/img).
+
+Ordenes de compra (/admin/orders): 
+
+![image](https://user-images.githubusercontent.com/114360790/209180247-359cc4e0-cb93-4433-bb97-e65830ac831f.png)
+
+Accediendo a la collection "orders" de la BD se listan las ordenes de compra realizadas hasta el momento. Con el botón "Entregado" de la derecha, se modifica el estado de la orden, de "generada" a "entregada", cuando los productos sean enviados al comprador.
+
+Stock críticos (/admin/critical):
+
+![image](https://user-images.githubusercontent.com/114360790/209180572-a2f332b8-f75d-4b54-8579-bd9ef0769285.png)
+
+Se muestran los artículos con stock menor a 5, y se tiene la opción de reponer stock, actualizando la cantidad de existencias en la BD.
+
+Reponer stock (/admin/restock):
+
+![image](https://user-images.githubusercontent.com/114360790/209180852-5a720cd2-674a-4701-92b7-76acd3846511.png)
+
+Listado de todos los productos cargados, con posibilidad de reponer stock.
+
+![image](https://user-images.githubusercontent.com/114360790/209181082-31071e81-8de9-4e91-ae76-18eff85d6715.png)
+
+Listado de todos los productos cargados, con posiblidad de modificar de manera individual los campos de interés, o eliminar el producto.
 
 
