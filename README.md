@@ -44,11 +44,11 @@ Los productos pueden filtrarse por categoria haciendo click en el menú desplega
 
 ![image](https://user-images.githubusercontent.com/114360790/209019501-2b249f2a-e0d0-484f-9a30-0a47d531b12c.png)
 
-En "productos" podemos posicionar el cursor sobre los productos, y aparecerá un botón para "Anadir al carro".
+Posicionando el cursor sobre los productos, aparecerá un botón para "Anadir al carro".
 
 ![image](https://user-images.githubusercontent.com/114360790/209019762-60260000-136e-4e0b-bbe2-08d5c839c90b.png)
 
-Una vez agregado, presionando en el botón "Carrito" de la barra de navegación vemos los productos agregados.
+Una vez agregado, presionando en el botón "Carrito" de la barra de navegación vemos los productos agregados (/cart).
 
 ![image](https://user-images.githubusercontent.com/114360790/209020027-8710799d-604b-4050-9005-b2202b2c334f.png)
 
@@ -56,8 +56,21 @@ Los productos agregados al carrito se almacenan en la base de datos, en la colle
 
 ![image](https://user-images.githubusercontent.com/114360790/209020672-ae1414a1-c45f-4a74-a6d0-93ee729ea3fc.png)
 
+Si apretamos "Eliminar Producto" en la derecha del listado del Carrito, quitamos el producto de la BD.
 
+Si apretamos "Confirmar compra":
 
+1- Se crea una orden, que se almacena en la BD en la collection "orders". Cada orden podrá ser obtenida por el Admin, y así ver las compras realizadas.
+2- Se resta la cantidad de productos comprados, del stock total.  (stock total almacenado en collection "products").
+3- Se elimina el carrito de la BD, quedando vacio.
+4- Se envia un mail con la orden al comprador.
 
+Por otro lado, si el usuario que se logea es admin (En la base de datos, collection "Users" está el campo isAdmin que puede ser true or false), en la barra de navegacion se adicionará el botón "Admin", para acceder al Panel de Control (/admin).
+
+![image](https://user-images.githubusercontent.com/114360790/209178453-e122d32b-7d8f-4695-8394-a7c15bc49529.png)
+
+Ingresando, se despliegan distintas opciones para la administración del Ecommerce. Todas las opciones (rutas) tienen un middleware para verificar si el usuario logeado es admin, en caso de no serlo, no permite acceder a la ruta.
+
+![image](https://user-images.githubusercontent.com/114360790/209178620-1900d26a-6a12-40fd-8712-151bdc57b789.png)
 
 
