@@ -16,6 +16,9 @@
   - Bootstrap (Tablas y botones)
   - jQuery (AJAX http request para añadir productos al carrito sin actualizar browser)
   - JavaScript (Elementos interactivos del front)
+  
+ Testing:
+  - Unit y Integration tests con Jest.
 
 Además de aprender sobre programación asincrónica, patrones de diseño, PostMan, principio SOLID.
 
