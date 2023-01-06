@@ -6,7 +6,7 @@ const createProduct = async (product) => {
 	try {
 		await Products.create(product);
 	} catch (error) {
-		console.log('\nError Products.create: ' + error +'\n');
+		console.log('\nError in createProduct Service: ' + error +'\n');
 	}
 };
 
