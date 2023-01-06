@@ -19,12 +19,12 @@ html(lang='en')
                 form(action='/login', method='POST')
                                 div.form-group
                                     label.formGroupExampleInput Email:
-                                    input(type="email", placeholder="Please enter your email", required=true, name='email', value='').form-control
-                                    label.formGroupExampleInput Password:
-                                    input(type="password", placeholder="New Password", required=true, name='password', value='').form-control
-                                    button.mt-3.btn.btn-primary(type='submit') Log In
+                                    input(type="email", placeholder="Ingrese su Email", required=true, name='email', value='').form-control
+                                    label.formGroupExampleInput Contraseña:
+                                    input(type="password", placeholder="Ingrese su contraseña", required=true, name='password', value='').form-control
+                                    button.mt-3.btn.btn-primary(type='submit') Ingresar
                                     if (retryLogIn)
-                                      p.small.text-danger Email or password incorrect.
+                                      p.small.text-danger Email o contraseña incorrectos.
                                     p.mt-2.mb-0
                                        | Aún no está registrado? #[a(href='/signup') Registrarse]
         if (user)

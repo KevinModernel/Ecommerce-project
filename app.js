@@ -6,7 +6,7 @@ const usersRouter = require('./src/routes/users_routes.js');
 const productsRouter = require('./src/routes/products_routes.js');
 const cartRouter = require('./src/routes/cart_routes.js');
 const app = express();
-const mongoose = require('mongoose');
+
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
@@ -36,22 +36,9 @@ app.use('/admin', adminRouter)
 app.use('/products', productsRouter);
 app.use('/cart', cartRouter);
 app.get('*', function(req, res){
-  res.render('notfound');
+	res.status(404);
+	res.render('notfound');
 });
 
-// Connect to DB
-mongoose.connect('mongodb+srv://mongodbuser:mongo123@cluster0.kp6gl82.mongodb.net/?retryWrites=true&w=majority',
-	 {
-	 	useNewUrlParser: true
-	 })
-		.then(db => console.log('DB is connected'))
-		.catch(err => console.error(err));
 
-// Innitialize Express Server
-const PORT = process.env.PORT || 3000
-try {
-	app.listen(PORT);
-	console.log("Express running on port: " + PORT);
-} catch (e) {
-	console.error('Unable to stablish server: ', e);
-};
+module.exports = app

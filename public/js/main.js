@@ -103,7 +103,6 @@
                     alert("some Error");
                 }
             });
-        console.log("ajax paso success y error");
         }
     );
 

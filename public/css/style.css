@@ -9781,8 +9781,9 @@ h6 {
 }
 
 .product-grid .product-item {
+    position: static;
     width: 25%;
-    padding: 15px;
+    padding: 10px;
 }
 
 @media (max-width: 992px) {
@@ -9805,8 +9806,9 @@ h6 {
 
 .product-grid .product-single {
     position: relative;
-    height: 500px;
-    width: 250px;
+    left: 100px;
+    height: 250px;
+    width: 125px;
     overflow: hidden;
 }
 
@@ -9820,8 +9822,8 @@ h6 {
 
 .product-grid .product-img img {
     display: block;
-    width: 250px;
-    height: 350px;
+    width: 125px;
+    height: 175px;
     transition: .3s;
 }
 
@@ -9838,7 +9840,7 @@ h6 {
 }
 
 .product-grid.grid-1 .product-status {
-    position: absolute;
+
     width: 100%;
     top: 0;
     left: 0;
@@ -9914,7 +9916,7 @@ h6 {
 }
 
 .product-grid.grid-1 .product-title h2 {
-    font-size: 22px;
+    font-size: 15px;
     font-weight: 200;
 }
 
@@ -9935,7 +9937,7 @@ h6 {
 .product-grid.grid-1 .product-price h2 {
     display: inline-block;
     color: #1dbf71;
-    font-size: 30px;
+    font-size: 15px;
     font-weight: 200;
 }
 

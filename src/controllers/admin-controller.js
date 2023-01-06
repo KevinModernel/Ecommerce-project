@@ -54,13 +54,18 @@ const editProducts = async (req, res) => {
 					price,
 					image,
 				};
-	await Products.updateOne({ _id: idProduct}, update);
-	res.redirect('/admin/edit');
+	try {
+		await Products.updateOne({ _id: idProduct}, update);
+		res.redirect('/admin/edit');
+	} catch (error) {
+		console.log('\nError in EditProduct Controller: ' + error +'\n');
+		res.redirect('/notfound');
+	};
 };
 
 const deleteProduct = async (req, res) => {
 	const idProduct = req.params.id;
-	await Products.findOneAndRemove( {id: idProduct} );
+	await Products.findOneAndRemove( {_id: idProduct} );
 	res.redirect('/admin/edit');
 };
 
