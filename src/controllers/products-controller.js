@@ -27,7 +27,6 @@ const addToCart = (req, res) => {
 	const name = req.body.name;
 	const price = req.body.price;
 	addToCartDB(name, price);
-	//res.get();
 };
 
 const show_category = async (req, res) => {
